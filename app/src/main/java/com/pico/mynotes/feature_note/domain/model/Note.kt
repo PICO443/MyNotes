@@ -16,3 +16,5 @@ data class Note(
         val noteColors = emptyList<Int>()
     }
 }
+
+class InvalidNoteException(message: String): Exception(message)
