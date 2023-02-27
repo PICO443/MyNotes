@@ -10,4 +10,7 @@ import com.pico.mynotes.feature_note.domain.model.Note
 )
 abstract class NoteDatabase : RoomDatabase() {
     abstract val noteDao: NoteDao
+    companion object {
+        const val DATA_BASE_NAME = "notes_db"
+    }
 }
