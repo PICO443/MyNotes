@@ -38,7 +38,9 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screens.NotesScreen.route) {
                             NotesScreen(
-                                onNoteClicked = { navController.navigate(Screens.AddEditNoteScreen.route + "/${it}") },
+                                onNoteClicked = {
+                                    navController.navigate(Screens.AddEditNoteScreen.route + "?noteId=${it}")
+                                },
                                 onAddNewNote = { navController.navigate(Screens.AddEditNoteScreen.route) }
                             )
                         }

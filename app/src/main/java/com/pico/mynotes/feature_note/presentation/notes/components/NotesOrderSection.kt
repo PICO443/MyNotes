@@ -51,6 +51,7 @@ fun NotesOrderSection(
                 text = "Descending"
             )
         }
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 

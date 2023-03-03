@@ -92,9 +92,12 @@ fun AddEditNoteScreen(
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
-            Row() {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
                 Text(text = "Color")
-                Spacer(modifier = Modifier.width(16.dp))
                 Note.noteColors.forEach {
                     Box(
                         modifier = Modifier
@@ -103,11 +106,10 @@ fun AddEditNoteScreen(
                             .background(it)
                             .clickable { viewModel.onEvent(AddEditNoteEvents.ChangeColor(it.toArgb())) }
                             .border(
-                                width = if (viewModel.noteColor.value == it.toArgb()) 4.dp else 0.dp,
-                                color = Color.Gray
+                                width = if (viewModel.noteColor.value == it.toArgb()) 2.dp else 0.dp,
+                                color = Color.Black
                             )
                     )
-                    Spacer(modifier = Modifier.width(16.dp))
                 }
             }
         }
